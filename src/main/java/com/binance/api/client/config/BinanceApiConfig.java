@@ -10,6 +10,20 @@ public class BinanceApiConfig {
 	 */
 	private static String BASE_DOMAIN = "binance.com";
 
+	private static String WS_HOST;
+
+	public static String getWsHost() {
+
+		return WS_HOST;
+	}
+
+
+	public static void setWsHost(String wsHost) {
+
+		WS_HOST = wsHost;
+	}
+
+
 	/**
 	 * Set the URL base domain name (e.g., binance.com).
 	 *
@@ -39,7 +53,7 @@ public class BinanceApiConfig {
 	 * Streaming API base URL.
 	 */
 	public static String getStreamApiBaseUrl() {
-		return String.format("wss://stream.%s:9443/ws", getBaseDomain());
+		return getWsHost();
 	}
 
 	/**
